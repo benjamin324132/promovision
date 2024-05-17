@@ -32,22 +32,22 @@ class ProjectsTable extends StatelessWidget {
                   label: Text("Id"),
                 ),
                 DataColumn(
-                  label: Text("Concepto"),
+                  label: Text("Costo"),
                 ),
                 DataColumn(
-                  label: Text("Gasto pretendido"),
+                  label: Text("Fecha inicio"),
                 ),
                 DataColumn(
-                  label: Text("Gasto real"),
+                  label: Text("Fecha fin"),
                 ),
                 DataColumn(
-                  label: Text("Diferencia"),
+                  label: Text("Servicios"),
                 ),
                 DataColumn(
-                  label: Text("Fecha"),
+                  label: Text("Gastos"),
                 ),
                 DataColumn(
-                  label: Text("Tipo"),
+                  label: Text("Precio venta"),
                 ),
               ],
               rows: List.generate(
@@ -65,13 +65,13 @@ class ProjectsTable extends StatelessWidget {
 DataRow recentFileDataRow(ProjectModel fileInfo) {
   return DataRow(
     cells: [
-      DataCell(Text(fileInfo.id!)),
-      DataCell(Text(fileInfo.concepto!)),
-      DataCell(Text(fileInfo.gastoPretendido!)),
-      DataCell(Text(fileInfo.gastoReal!)),
-      DataCell(Text(fileInfo.diferencia!)),
-      DataCell(Text(fileInfo.fecha!)),
-      DataCell(Text(fileInfo.tipo!)),
+      DataCell(Text(fileInfo.id)),
+      DataCell(Text("\$${fileInfo.costoPropiedad}")),
+      DataCell(Text(fileInfo.fechaInicio)),
+      DataCell(Text(fileInfo.fechaFin)),
+      DataCell(Text(fileInfo.servicios)),
+      DataCell(Text(fileInfo.gastos)),
+      DataCell(Text("\$${fileInfo.precioVenta}")),
     ],
   );
 }

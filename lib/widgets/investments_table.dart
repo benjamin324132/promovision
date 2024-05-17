@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:promovision/models/expenses.dart';
+import 'package:promovision/models/investment.dart';
 import 'package:promovision/utils/constants.dart';
 
-class ExpensesTable extends StatelessWidget {
-  const ExpensesTable({super.key});
+class InvestmentsTable extends StatelessWidget {
+  const InvestmentsTable({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,21 +26,24 @@ class ExpensesTable extends StatelessWidget {
                   label: Text("Id"),
                 ),
                 DataColumn(
-                  label: Text("Concepto"),
+                  label: Text("Proyecto"),
                 ),
                 DataColumn(
-                  label: Text("Cantidad"),
+                  label: Text("Inversor"),
                 ),
                 DataColumn(
-                  label: Text("Cuenta"),
+                  label: Text("Monto"),
                 ),
                 DataColumn(
-                  label: Text("Fecha"),
+                  label: Text("Porcentaje"),
+                ),
+                DataColumn(
+                  label: Text("Fecha Desinversion"),
                 ),
               ],
               rows: List.generate(
-                demoExpenses.length,
-                (index) => recentFileDataRow(demoExpenses[index]),
+                demoInvestments.length,
+                (index) => recentFileDataRow(demoInvestments[index]),
               ),
             ),
           ),
@@ -50,14 +53,15 @@ class ExpensesTable extends StatelessWidget {
   }
 }
 
-DataRow recentFileDataRow(ExpenseModel fileInfo) {
+DataRow recentFileDataRow(InvestmentsModel fileInfo) {
   return DataRow(
     cells: [
-      DataCell(Text(fileInfo.id!)),
-      DataCell(Text(fileInfo.concepto!)),
-      DataCell(Text(fileInfo.cantidad!)),
-      DataCell(Text(fileInfo.cuenta!)),
-      DataCell(Text(fileInfo.fecha!)),
+      DataCell(Text(fileInfo.id)),
+      DataCell(Text(fileInfo.proyecto)),
+      DataCell(Text(fileInfo.inversor)),
+      DataCell(Text("\$${fileInfo.montoInversion}")),
+      DataCell(Text(fileInfo.porcentajePropiedad != null ? "${fileInfo.porcentajePropiedad}" : "")),
+      DataCell(Text("${fileInfo.fechaDesinversion}")),
     ],
   );
 }

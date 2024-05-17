@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:promovision/models/expenses.dart';
+import 'package:promovision/models/clients.dart';
 import 'package:promovision/utils/constants.dart';
 
-class ExpensesTable extends StatelessWidget {
-  const ExpensesTable({super.key});
+class ClientsTable extends StatelessWidget {
+  const ClientsTable({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,21 +26,24 @@ class ExpensesTable extends StatelessWidget {
                   label: Text("Id"),
                 ),
                 DataColumn(
-                  label: Text("Concepto"),
+                  label: Text("Nombre"),
                 ),
                 DataColumn(
-                  label: Text("Cantidad"),
+                  label: Text("Apellidos"),
                 ),
                 DataColumn(
-                  label: Text("Cuenta"),
+                  label: Text("Telefono"),
                 ),
                 DataColumn(
-                  label: Text("Fecha"),
+                  label: Text("Email"),
+                ),
+                DataColumn(
+                  label: Text("Monto"),
                 ),
               ],
               rows: List.generate(
-                demoExpenses.length,
-                (index) => recentFileDataRow(demoExpenses[index]),
+                demoClients.length,
+                (index) => recentFileDataRow(demoClients[index]),
               ),
             ),
           ),
@@ -50,14 +53,15 @@ class ExpensesTable extends StatelessWidget {
   }
 }
 
-DataRow recentFileDataRow(ExpenseModel fileInfo) {
+DataRow recentFileDataRow(ClientsModel fileInfo) {
   return DataRow(
     cells: [
-      DataCell(Text(fileInfo.id!)),
-      DataCell(Text(fileInfo.concepto!)),
-      DataCell(Text(fileInfo.cantidad!)),
-      DataCell(Text(fileInfo.cuenta!)),
-      DataCell(Text(fileInfo.fecha!)),
+      DataCell(Text(fileInfo.id)),
+      DataCell(Text(fileInfo.nombre)),
+      DataCell(Text(fileInfo.apellido1 ?? "")),
+      DataCell(Text(fileInfo.telefono)),
+      DataCell(Text(fileInfo.email)),
+      DataCell(Text("\$${fileInfo.montoCredito}")),
     ],
   );
 }

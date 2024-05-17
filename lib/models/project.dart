@@ -1,71 +1,30 @@
 class ProjectModel {
-  final String? id, concepto, gastoPretendido, gastoReal, diferencia, fecha, tipo;
+  final String id;
+  final int costoPropiedad;
+  final String fechaInicio;
+  final String fechaFin;
+  final String servicios;
+  final String gastos;
+  final int? precioVenta;
 
-  ProjectModel({this.id, this.concepto, this.gastoPretendido, this.gastoReal, this.diferencia, this.fecha, this.tipo});
+  ProjectModel(
+      {required this.id,
+      required this.costoPropiedad,
+      required this.fechaInicio,
+      required this.fechaFin,
+      required this.servicios,
+      required this.gastos,
+      this.precioVenta});
 }
 
 List<ProjectModel> demoProjects = [
   ProjectModel(
-    id: "234",
-    concepto: "Compra",
-    gastoPretendido: "100000",
-    gastoReal: "90000",
-    diferencia: "10000",
-    fecha: "23/4/2024",
-    tipo: "Externo"
-  ),
- ProjectModel(
-    id: "234",
-    concepto: "Compra",
-    gastoPretendido: "100000",
-    gastoReal: "90000",
-    diferencia: "10000",
-    fecha: "23/4/2024",
-    tipo: "Externo"
-  ),
-  ProjectModel(
-    id: "234",
-    concepto: "Compra",
-    gastoPretendido: "100000",
-    gastoReal: "90000",
-    diferencia: "10000",
-    fecha: "23/4/2024",
-    tipo: "Externo"
-  ),
-  ProjectModel(
-    id: "234",
-    concepto: "Compra",
-    gastoPretendido: "100000",
-    gastoReal: "90000",
-    diferencia: "10000",
-    fecha: "23/4/2024",
-    tipo: "Externo"
-  ),
-  ProjectModel(
-    id: "234",
-    concepto: "Compra",
-    gastoPretendido: "100000",
-    gastoReal: "90000",
-    diferencia: "10000",
-    fecha: "23/4/2024",
-    tipo: "Externo"
-  ),
-  ProjectModel(
-    id: "234",
-    concepto: "Compra",
-    gastoPretendido: "100000",
-    gastoReal: "90000",
-    diferencia: "10000",
-    fecha: "23/4/2024",
-    tipo: "Externo"
-  ),
-  ProjectModel(
-    id: "234",
-    concepto: "Compra",
-    gastoPretendido: "100000",
-    gastoReal: "90000",
-    diferencia: "10000",
-    fecha: "23/4/2024",
-    tipo: "Externo"
-  ),
+      id: "234",
+      costoPropiedad: 400000,
+      fechaInicio: "Inicio",
+      fechaFin: "Fin",
+      servicios: "Luz, agua",
+      gastos: "Limpieza",
+      precioVenta: 450000),
+
 ];
